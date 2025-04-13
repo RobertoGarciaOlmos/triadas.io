@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+  <!-- Meta y configuración básica -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>TRIADA SERVICIOS</title>
+
+  <meta name="keywords" content="fullscreen image, grid layout, flexbox grid, transition">
+  <meta name="author" content="ThemePunch">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/LogoNew.png">
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.css">
+
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+ Alineación al centro
+
+  <!-- Tus estilos personalizados -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+    overflow-x: hidden;
+  }
+
+    .fondo-transparente {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 1rem;
+      padding: 2rem;
+    }
+
+    .fondo-transparente h1,
+    .fondo-transparente p,
+    .fondo-transparente h5 {
+      color: #013b75;
+      font-weight: 600;
+    }
+
+    .card {
+      background: transparent;
+      border: none;
+    }
+
+    .card img {
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+
+    .card-title {
+      font-weight: 700;
+      color: #013B75;
+    }
+
+    .fondo-azul {
+      background-color: #013b75;
+    }
+
+    .fondo-azul .card-title,
+    .fondo-azul .lead,
+    .fondo-azul p {
+      color: white;
+    }
+
+    .fondo-azul .card {
+      border: none;
+      background: transparent;
+    }
+
+    video::-webkit-media-controls-start-playback-button {
+      display: none !important;
+    }
+
+    .nc-shadow {
+      box-shadow: 0px 5px 75px 0px rgba(45, 48, 50, 0.35);
+    }
+
+    .blanco-con-contorno {
+      color: white;
+      text-shadow: -1px -1px 0 #013b75, 1px -1px 0 #013b75,
+                   -1px 1px 0 #013b75, 1px 1px 0 #013b75;
+    }
+    .navbar-nav .nav-link.text-white:hover {
+    color: #ccc;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.375rem;
+    transition: background-color 0.3s ease;
+  }
+   .navbar-nav .nav-link.btn-contacto {
+    background-color:#ffc107  ;
+    color: #fff;
+    border-radius: 0.375rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .navbar-nav .nav-link.btn-contacto:hover {
+    background-color:rgb(1, 30, 59); /* tono más oscuro */
+  }
+
+  </style>
+</head>
+
+<body>
+
+	<!-- MENU DE INICIO  -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3" style="background-color: transparent; transition: background-color 0.3s;" id="mainNavbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="assets/BFullleft.png" alt="Triada" style="height: 40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link text-white" href="#aboutUs">Sobre Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#transporte2">Transporte</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#almacenaje">Almacenaje</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#ubi1">Ubicaciones</a></li>
+            <li class="nav-item">
+              <a class="nav-link btn-contacto fw-bold ms-3" href="#contactanos1">Contáctanos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+
+
+  <script>
+    // Cierra el menú al hacer clic en un enlace
+    document.addEventListener('DOMContentLoaded', function () {
+      const navLinks = document.querySelectorAll('.nav-link');
+      const navbarCollapse = document.getElementById('navbarResponsive');
+
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+          if (bsCollapse && window.innerWidth < 992) {
+            bsCollapse.hide();
+          }
+        });
+      });
+    });
+  </script>
+
+
+  <!-- Hero Section reemplazando Revolution Slider con Bootstrap -->
+  <section class="position-relative vh-100 bg-dark text-white d-flex align-items-center justify-content-center" style="overflow: hidden;">
+    <video autoplay loop muted playsinline class="position-absolute w-100 h-100 object-fit-cover z-0">
+      <source src="assets/Busy-People1.mp4" type="video/mp4">
+    </video>
+  
+    <div class="position-relative text-center z-1 px-3">
+      <!-- Quitamos margen inferior con mb-0 y agregamos display-block para evitar espacios verticales -->
+      <img src="assets/BFullleft.png" alt="Triada Logo"
+           class="img-fluid d-block mx-auto" style="max-width: 50vw; margin-bottom: 0 !important;">
+  
+      <!-- Quitamos márgenes superiores -->
+      <div class="text-white fw-bold" style="font-size: 1.5rem; margin-top: 0;">
+        TU ENTREGA PUNTUAL Y CONFIABLE
+      </div>
+  
+      <div class="mt-5" style="margin-top: 200px;">
+        <a href="#aboutUs">
+          <img src="assets/ic_keyboard_arrow_down_24px.svg"
+          alt="Scroll abajo"
+          class="bg-transparent border border-white rounded-circle p-2"
+          style="width: 50px; height: 50px; filter: brightness(0) invert(1);">
+        </a>
+      </div>
+    </div>
+  
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(45, 48, 50, 0.25);"></div>
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navbar = document.getElementById('mainNavbar');
+      const contactButton = document.getElementById('contactButton');
+  
+      function updateNavbarStyle() {
+        if (window.scrollY > 50) {
+          navbar.style.backgroundColor = '#013b75';
+          contactButton.style.backgroundColor = '#f9c639';
+          contactButton.style.color = '#ffffff';
+          contactButton.style.fontWeight = 'bold';
+        } else {
+          navbar.style.backgroundColor = 'transparent';
+          contactButton.style.backgroundColor = '#f9c639';
+          contactButton.style.color = '#ffffff';
+          contactButton.style.fontWeight = 'bold';
+        }
+      }
+  
+      window.addEventListener('scroll', updateNavbarStyle);
+      updateNavbarStyle();
+    });
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <style>
+    video::-webkit-media-controls-start-playback-button {
+      display: none !important;
+    }
+  </style>
+  
+  <div id="aboutUs" style="padding-top: 80px; margin-top: -80px;"></div>
+  
+			<!-- About US  -->
+
+<div class="bg-image" style="
+    background-image: url('assets/Fondo1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+">
+
+    <!-- 🔳 Capa encima de la imagen, pero debajo del contenido -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(1, 59, 117, 0.57); /* Fondo negro con 40% opacidad */
+        z-index: 1;
+    "></div>
+
+    <!-- 🧾 Contenido del bloque (letras, etc.) -->
+    <div style="position: relative; z-index: 2;">
+
+
+    <div class="row text-center mb-4" style="background-color: transparent;">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <h1 class="font-weight-bold" style="color: white;">TRIADA SERVICIOS</h1>
+        </div>
+        <div class="col-1"></div>
+    </div>
+
+
+    <div class="row text-center mb-4" style="background-color: transparent;">
+
+        <div class="col-12">
+            <p class="lead" style="background-color: transparent; color: white;">Es una empresa de transporte y servicios logísticos, ofrecemos adaptar nuestra operación a sus necesidades actuales dando solución a sus demandas existentes.</p>
+        </div>
+
+    </div>
+
+
+	<div class="row text-center mb-4" style="background-color: transparent;">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <img src="assets/caja2.png" alt="Caja" style="width: 20%; height: auto;">
+    </div>
+    <div class="col-1"></div>
+</div>
+<br>
+<br>
+
+
+<style>
+  @media (max-width: 991.98px) {
+    .responsive-text {
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .responsive-text {
+      text-align: justify;
+    }
+  }
+</style>
+
+<div class="row text-center mb-4" style="background-color: transparent;">
+
+  <div class="col-lg-4 col-md-12 mb-4 d-flex justify-content-center">
+    <div class="px-5" style="max-width: 500px;">
+      <h2 class="font-weight-bold" style="color: white;">MISIÓN</h2>
+      <br>
+      <p class="lead responsive-text" style="background-color: transparent; color: white;">
+        Satisfacer las necesidades de nuestros clientes garantizando la entrega de sus pedidos con excelencia en el desempeño, siendo confiables, rápidos y seguros en el transporte de última milla y almacenaje.
+      </p>
+    </div>
+  </div>
+  
+  <div class="col-lg-4 col-md-12 mb-4 d-flex justify-content-center">
+    <div class="px-5" style="max-width: 500px;">
+      <h2 class="font-weight-bold" style="color: white;">VISIÓN</h2>
+      <br>
+      <p class="lead responsive-text" style="background-color: transparent; color: white;">
+        Ser el principal proveedor de transporte de última milla y almacenaje para las empresas de comercio electrónico, teniendo estabilidad operativa y siendo sustentables.
+      </p>
+    </div>
+  </div>
+  
+  <div class="col-lg-4 col-md-12 mb-4 d-flex justify-content-center">
+    <div class="px-5" style="max-width: 500px;">
+      <h2 class="font-weight-bold" style="color: white;">VALORES</h2>
+      <br>
+      <p class="lead responsive-text" style="background-color: transparent; color: white;">
+        En la cultura organizacional, nuestros valores son: Honestidad, Puntualidad, Responsabilidad, Sinergia, Competitividad y Orientación al cliente.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+    <div class="col-1"></div>
+</div>
+    
+    <br>
+</div>
+</div>
+
+<!-- Servicios de Trasporte  -->
+<div id="transporte2"  style="height: 25px;"></div>
+<br>
+
+<div>
+
+<!-- Sección fondo blanco semitransparente -->
+
+<div class="fondo-transparente">
+  <div class="row text-center mb-5">
+    <div class="col-lg-12">
+      <h1 class="font-weight-bold">SERVICIOS DE TRANSPORTE</h1>
+    </div>
+  </div>
+  <style>
+    @media (max-width: 991.98px) {
+      .responsive-text {
+        text-align: center;
+      }
+    }
+  
+    @media (min-width: 992px) {
+      .responsive-text {
+        text-align: justify;
+      }
+    }
+  </style>
+  
+  <div class="row justify-content-center">
+    <div class="col-lg-10 col-md-11 col-sm-12">
+      <div class="px-5">
+        <p class="lead responsive-text">
+          Nos ajustamos a las necesidades de nuestros clientes, ofreciendo unidades según sus requerimientos específicos. Contamos con una flota de vehículos con menos de un año de uso, todos en óptimas condiciones mecánicas y sujetos a rigurosos servicios preventivos para garantizar un rendimiento excepcional.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sección de tarjetas -->
+<div class="row text-center my-5">
+  <div class="col-lg-2 col-md-2"></div>
+  <div class="col-lg-8 col-md-8">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card text-white bg-transparent">
+          <img src="assets/SmallVan1.png" class="card-img-top" alt="Small Van">
+          <div class="card-body">
+            <h5 class="card-title">Small Van</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card text-white bg-transparent">
+          <img src="assets/LargeVan2.png" class="card-img-top" alt="Large Van">
+          <div class="card-body">
+            <h5 class="card-title">Large Van</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card text-white bg-transparent">
+          <img src="assets/pickUp1.png" class="card-img-top" alt="Pick Up">
+          <div class="card-body">
+            <h5 class="card-title">Pick up</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-2 col-md-2"></div>
+</div>
+
+<!-- Sección de texto con fondo azul -->
+
+<style>
+  @media (max-width: 991.98px) {
+    .responsive-text {
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .responsive-text {
+      text-align: justify;
+    }
+  }
+</style>
+
+<div class="fondo-azul text-white py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10 col-md-11 col-sm-12">
+      <div class="px-5" ">
+        <p class="lead responsive-text">
+          Contamos con unidades de reciente modelo para ofrecerte lo mejor en calidad y eficiencia. Todas nuestras unidades están equipadas con localizador satelital 24/7 y telemetría, asegurando el monitoreo continuo y la seguridad de tus envíos. Además, disponemos de cajas secas y refrigeradas para mantener tus productos en condiciones óptimas durante todo el trayecto. Para una mayor tranquilidad, nuestras unidades están equipadas con cámaras de seguridad, garantizando el control y la vigilancia en todo momento.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Almacenamiento  -->
+
+
+<style>
+  @media (max-width: 991.98px) {
+    .responsive-text {
+      text-align: center;
+      font-size: 1.1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .responsive-text {
+      text-align: justify;
+      font-size: 1.3rem;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+</style>
+
+<div id="almacenaje" style="position: relative; top: -80px;"></div>
+
+<div style="position: relative; padding-top: 60px; padding-bottom: 60px; overflow: hidden;">
+  <!-- Fondo con opacidad -->
+  <div style="
+  background-image: linear-gradient(#ffc107, rgba(75, 77, 27, 0)), url('assets/Fondo2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+"></div>
+
+  <!-- Contenido encima -->
+  <div style="position: relative; z-index: 2;">
+    <div class="row text-center mb-4" style="background-color: transparent;"> 
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div style="background-color: rgba(255, 255, 255, 0); border-radius: 12px;">
+          <h1 class="font-weight-bold blanco-con-contorno" style="color: white; font-weight: 700;">
+            SERVICIOS DE ALMACENAJE Y LOGÍSTICA
+          </h1>
+          <br>
+          <p class="lead responsive-text" style="
+            color: white;
+            text-shadow: -1px -1px 0 #013b75, 1px -1px 0 #013b75,
+                         -1px  1px 0 #013b75, 1px  1px 0 #013b75;
+            line-height: 1.8;
+          
+            font-weight: 700;
+          ">
+            Reducimos tus costos de almacenaje, distribución e inventarios, mientras te ofrecemos soluciones eficientes para la manipulación y reubicación de mercancías, minimizando errores y mejorando la productividad. ¡Deja que nosotros nos encarguemos de la logística, para que tú te concentres en hacer crecer tu negocio!
+          </p>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  </div>
+  <div style="position: relative; z-index: 2;">
+
+    <div class="row justify-content-center text-center mb-4" style="background-color: transparent;">
+      <div class="col-12 col-md-6 col-lg-5 mb-4 px-3">
+        <div style="color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+          <img src="assets/Toluca.png" alt="Toluca" class="img-fluid mb-3" style="border-radius: 8px;">
+          <h2 class="font-weight-bold blanco-con-contorno" style="background-color: #013b75; padding: 10px; border-radius: 8px;">
+            TOLUCA
+          </h2>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-5 mb-4 px-3">
+        <div style="color: white; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+          <img src="assets/Pachuca.png" alt="Pachuca" class="img-fluid mb-3" style="border-radius: 8px;">
+          <h2 class="font-weight-bold blanco-con-contorno" style="background-color: #013b75; padding: 10px; border-radius: 8px;">
+            PACHUCA
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Ubicaciones  -->
+
+<style>
+  @media (min-width: 992px) {
+    .text-lg-justify {
+      text-align: justify;
+    }
+  }
+</style>
+
+<div id="ubi1" style="position: relative; top: -80px;"></div>
+
+<div id="ubi1" style="
+    background-image: url('assets/Fondo1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 60px;
+    padding-bottom: 60px;
+">
+  <div class="row justify-content-center mb-4">
+    <div class="col-11 col-md-10 col-lg-8 text-center text-lg-start">
+      <h1 class="font-weight-bold text-center" style="color: white;">COBERTURA ESTRATÉGICA PARA TU NEGOCIO</h1>
+      <br>
+      <p class="lead text-center text-lg-justify" style="color: white;">
+        Llevamos tu carga a donde la necesites. Contamos con una red de rutas optimizadas y presencia en múltiples localidades, garantizando entregas seguras y puntuales. Consulta nuestro mapa y descubre hasta dónde podemos llegar por ti.
+      </p>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row justify-content-center mb-4">
+    <div class="col-11 col-md-10 col-lg-8 text-center">
+      <img src="assets/mexico1.png" alt="México" class="img-fluid">
+    </div>
+  </div>
+</div>
+			<!-- Footer  -->
+			<div id="contactanos1"></div>
+			
+		
+			<footer class="bg-dark text-white py-5">
+				<br><br>
+
+
+<!-- Contenedor del título y texto -->
+<div class="container mb-4">
+  <div class="row justify-content-center text-center">
+    <div class="col-md-12">
+      <h1 class="fw-bold">CONTÁCTANOS</h1>
+      <br>
+      <p class="mb-0" style="font-size: 1.3rem;">
+        Ponte en contacto con nosotros a través de los siguientes medios. Estaremos encantados de atenderte y brindarte una solución personalizada para tus necesidades logísticas.
+      </p>
+      <br><br>
+      <img src="assets/caja2.png" alt="Caja logística" class="img-fluid mx-auto d-block" style="max-width: 350px;">
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+<!-- Contenedor separado para los botones -->
+<div class="container text-center">
+  <div class="row justify-content-center">
+
+    <!-- Columna WhatsApp -->
+    <div class="col-12 col-lg-3 mb-3">
+      <a href="https://wa.me/527203653300?text=Hola,%20estoy%20interesado%20en%20recibir%20informaci%C3%B3n%20sobre%20los%20servicios%20log%C3%ADsticos%20que%20ofrece%20Triada."
+         target="_blank" 
+         class="btn d-inline-flex align-items-center justify-content-center w-100"
+         style="background-color: #25D366; color: white; font-size: 1.3rem; padding: 16px 24px; border-radius: 8px;">
+        <img src="assets/wts.png" alt="WhatsApp" style="height: 32px; margin-right: 12px;">
+        WhatsApp
+      </a>
+    </div>
+
+    <!-- Columna LinkedIn -->
+    <div class="col-12 col-lg-3 mb-3">
+      <a href="https://www.linkedin.com/company/triada-servicios/"
+         target="_blank"
+         class="btn d-inline-flex align-items-center justify-content-center w-100"
+         style="background-color: rgb(0, 80, 224); color: white; font-size: 1.3rem; padding: 16px 24px; border-radius: 8px;">
+        <img src="assets/lk.png" alt="LinkedIn" style="height: 32px; margin-right: 12px;">
+        LinkedIn
+      </a>
+    </div>
+
+  </div>
+  <br><br><br><br>
+</div>
+
+
+
+
+</footer>
+
+<div style="background-color: #013B75; padding: 20px 0;">
+  <p class="text-center text-white mb-0" style="font-size: 0.9rem;">
+    © 2025 Triada Servicios. Todos los derechos reservados. Empresa establecida en Toluca, Estado de México.  
+    La información contenida en este sitio web es únicamente de carácter informativo y puede estar sujeta a cambios sin previo aviso.
+  </p>
+</div>
+	<!-- END REVOLUTION SLIDER -->
+
+		<script>
+			var	tpj = jQuery;
+			if(window.RS_MODULES === undefined) window.RS_MODULES = {};
+			if(RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+			RS_MODULES.modules["revslider391"] = {once: RS_MODULES.modules["revslider391"]!==undefined ? RS_MODULES.modules["revslider391"].once : undefined, init:function() {
+				window.revapi39 = window.revapi39===undefined || window.revapi39===null || window.revapi39.length===0  ? document.getElementById("rev_slider_39_1") : window.revapi39;
+				if(window.revapi39 === null || window.revapi39 === undefined || window.revapi39.length==0) { window.revapi39initTry = window.revapi39initTry ===undefined ? 0 : window.revapi39initTry+1; if (window.revapi39initTry<20) requestAnimationFrame(function() {RS_MODULES.modules["revslider391"].init()}); return;}
+				window.revapi39 = jQuery(window.revapi39);
+				if(window.revapi39.revolution==undefined){ revslider_showDoubleJqueryError("rev_slider_39_1"); return;}
+				revapi39.revolutionInit({
+						revapi:"revapi39",
+						sliderType:"hero",
+						sliderLayout:"fullwidth",
+						visibilityLevels:"1240,1024,778,480",
+						gridwidth:"1240,1024,778,480",
+						gridheight:"400,400,500,500",
+						lazyType:"smart",
+						perspective:600,
+						perspectiveType:"local",
+						editorheight:"550,400,500,500",
+						responsiveLevels:"1240,1024,778,480",
+						progressBar:{disableProgressBar:true},
+						navigation: {
+							onHoverStop:false
+						},
+						scrolleffect: {
+							set:true,
+							fade:true,
+							direction:"bottom",
+							multiplicator:1.3,
+							multiplicator_layers:1.4,
+							tilt:10,
+							disable_onmobile:true
+						},
+						viewPort: {
+							global:true,
+							globalDist:"-200px",
+							enable:true,
+							visible_area:"20%",
+							presize:true
+						},
+						fallbacks: {
+							allowHTML5AutoPlayOnAndroid:true
+						},
+				});
+				
+			}} // End of RevInitScript
+			if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal();};
+		</script>
+
+
+
+<style>.nc-shadow{-webkit-box-shadow:0px 5px 75px 0px rgba(45,48,50,0.35);-moz-box-shadow:0px 5px 75px 0px rgba(45,48,50,0.35);box-shadow:0px 5px 75px 0px rgba(45,48,50,0.35)}</style>
+<script type="text/javascript">window.RVS ??= {}; window.RVS.ENV ??= {}; window.RVS.ENV.TRANSITIONPACK_URL = "http://localhost:84/wordpress/wp-content/plugins/revslider-transitionpack-addon/";</script>
+</div>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggler = document.querySelector('.navbar-toggler');
+      const navbarCollapse = document.getElementById('navbarResponsive');
+  
+      toggler.addEventListener('click', () => {
+        const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+        bsCollapse.toggle();
+      });
+    });
+  </script>
+
+</body>
+
+
+
+</html>
+		
